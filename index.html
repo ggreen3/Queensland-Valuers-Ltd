@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PropertyHub</title>
-  <link rel="icon" type="image/png" href="https://via.placeholder.com/32?text=PH" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2216%22 fill=%22%233b82f6%22/%3E%3Ctext x=%225%22 y=%2222%22 font-family=%22Inter, sans-serif%22 font-size=%2220%22 font-weight=%22700%22 fill=%22%23fff%22%3EPH%3C/text%3E%3C/svg%3E';">
+  <title>Queensland Valuers Limited</title>
+  <link rel="icon" type="image/png" href="https://via.placeholder.com/32?text=QVL" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2216%22 fill=%22%231E5E5C%22/%3E%3Ctext x=%225%22 y=%2222%22 font-family=%22Lora, serif%22 font-size=%2220%22 font-weight=%22700%22 fill=%22%23fff%22%3EQVL%3C/text%3E%3C/svg%3E';">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --jet-black: #1a1a1a;
@@ -12,19 +13,24 @@
       --gray-800: #2d2d2d;
       --gray-700: #3a3a3a;
       --gray-600: #4a4a4a;
-      --gray-400: #a0a0a0;
-      --gray-300: #d1d1d1;
+      --gray-400: #B0B0B0;
+      --gray-300: #D8D8D8;
       --gray-200: #e5e5e5;
       --white: #ffffff;
-      --accent: #3b82f6;
+      --primary-accent: #1E5E5C;
+      --secondary-accent: #D4A017;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       scroll-behavior: smooth;
+    }
+
+    h1, h2, h3, .nav-links a {
+      font-family: 'Lora', serif;
     }
 
     body {
@@ -52,14 +58,14 @@
     }
 
     .nav-container h1 {
-      font-size: 1.8rem;
+      font-size: 2rem;
       font-weight: 700;
       cursor: pointer;
       transition: color 0.3s;
     }
 
     .nav-container h1:hover {
-      color: var(--accent);
+      color: var(--primary-accent);
     }
 
     .nav-links {
@@ -71,33 +77,13 @@
       color: var(--gray-300);
       text-decoration: none;
       margin-left: 1.5rem;
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-weight: 500;
       transition: color 0.3s;
     }
 
     .nav-links a:hover {
-      color: var(--white);
-    }
-
-    .wishlist-link {
-      position: relative;
-    }
-
-    .wishlist-counter {
-      position: absolute;
-      top: -8px;
-      right: -12px;
-      background-color: #ff3040;
-      color: var(--white);
-      font-size: 0.75rem;
-      font-weight: 600;
-      border-radius: 50%;
-      width: 18px;
-      height: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      color: var(--primary-accent);
     }
 
     .hamburger {
@@ -127,7 +113,28 @@
 
     .nav-links.mobile a {
       margin: 0.5rem 0;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
+    }
+
+    .intro-section {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c');
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      padding: 6rem 1rem;
+      color: var(--white);
+    }
+
+    .intro-section h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .intro-section p {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
     }
 
     .container {
@@ -163,12 +170,12 @@
 
     .search-bar input:focus,
     .search-bar select:focus {
-      box-shadow: 0 0 0 2px var(--accent);
+      box-shadow: 0 0 0 2px var(--primary-accent);
     }
 
     .search-bar button {
       padding: 0.75rem 1.5rem;
-      background-color: var(--accent);
+      background-color: var(--primary-accent);
       color: var(--white);
       font-weight: 600;
       border: none;
@@ -178,26 +185,31 @@
     }
 
     .search-bar button:hover {
-      background-color: #2563eb;
+      background-color: #155251;
     }
 
-    .wishlist-section {
-      margin-bottom: 2rem;
+    .section {
+      margin: 3rem 0;
     }
 
-    .wishlist-section h2 {
-      font-size: 1.8rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
+    .section h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      text-align: center;
     }
 
-    .property-grid {
+    .service-grid,
+    .property-grid,
+    .admin-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 1.5rem;
     }
 
-    .property-card {
+    .service-card,
+    .property-card,
+    .admin-card {
       background-color: var(--gray-900);
       border-radius: 0.75rem;
       overflow: hidden;
@@ -207,7 +219,9 @@
       position: relative;
     }
 
-    .property-card:hover {
+    .service-card:hover,
+    .property-card:hover,
+    .admin-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     }
@@ -258,49 +272,70 @@
       background: rgba(0, 0, 0, 0.8);
     }
 
-    .carousel-nav button:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
-
-    .property-card .content {
+    .service-card .content,
+    .property-card .content,
+    .admin-card .content {
       padding: 1.5rem;
     }
 
-    .property-card h3 {
-      font-size: 1.3rem;
-      font-weight: 600;
+    .service-card h3,
+    .property-card h3,
+    .admin-card h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
       margin-bottom: 0.5rem;
     }
 
-    .property-card p {
+    .service-card p,
+    .property-card p,
+    .admin-card p {
       color: var(--gray-400);
       font-size: 0.95rem;
       margin-bottom: 0.5rem;
     }
 
-    .property-card .price {
+    .property-card .price,
+    .admin-card .price {
       color: var(--gray-300);
-      font-weight: 500;
+      font-weight: 600;
       font-size: 1.1rem;
     }
 
-    .wishlist-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: rgba(0, 0, 0, 0.5);
-      border: none;
-      color: var(--white);
-      font-size: 1.2rem;
-      padding: 0.5rem;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: color 0.3s;
+    .property-card .cta-buttons,
+    .admin-card .cta-buttons {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
     }
 
-    .wishlist-btn.active {
-      color: #ff3040;
+    .property-card .cta-buttons a,
+    .admin-card .cta-buttons button {
+      flex: 1;
+      padding: 0.5rem;
+      background-color: var(--primary-accent);
+      color: var(--white);
+      text-align: center;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .property-card .cta-buttons a:nth-child(2),
+    .admin-card .cta-buttons button:nth-child(2) {
+      background-color: var(--secondary-accent);
+    }
+
+    .property-card .cta-buttons a:hover,
+    .admin-card .cta-buttons button:hover {
+      background-color: #155251;
+    }
+
+    .property-card .cta-buttons a:nth-child(2):hover,
+    .admin-card .cta-buttons button:nth-child(2):hover {
+      background-color: #b88e14;
     }
 
     .modal {
@@ -350,42 +385,10 @@
       color: var(--white);
     }
 
-    .date-picker {
-      display: flex;
-      gap: 1rem;
-      margin: 1rem 0;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .date-picker input {
-      padding: 0.75rem;
-      background-color: var(--gray-800);
-      border: none;
-      border-radius: 0.5rem;
-      color: var(--white);
-      font-size: 1rem;
-      flex: 1;
-      outline: none;
-      min-width: 150px;
-    }
-
-    .date-picker input:focus {
-      box-shadow: 0 0 0 2px var(--accent);
-    }
-
-    .date-picker label {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--gray-300);
-      font-size: 1rem;
-    }
-
     .modal-content .book-btn {
       width: 100%;
       padding: 0.75rem;
-      background-color: var(--accent);
+      background-color: var(--primary-accent);
       color: var(--white);
       font-weight: 600;
       border: none;
@@ -398,8 +401,16 @@
       margin-bottom: 0.5rem;
     }
 
+    .modal-content .book-btn:nth-child(2) {
+      background-color: var(--secondary-accent);
+    }
+
     .modal-content .book-btn:hover {
-      background-color: #2563eb;
+      background-color: #155251;
+    }
+
+    .modal-content .book-btn:nth-child(2):hover {
+      background-color: #b88e14;
     }
 
     .close-btn {
@@ -413,19 +424,9 @@
       cursor: pointer;
     }
 
-    .section {
-      margin: 3rem 0;
-    }
-
-    .section h2 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-
     .contact-section,
-    .about-section {
+    .about-section,
+    .admin-section {
       background-color: var(--gray-900);
       padding: 2rem;
       border-radius: 0.75rem;
@@ -447,25 +448,31 @@
       margin: 1rem 0;
     }
 
-    .contact-grid {
+    .contact-grid,
+    .admin-form {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
     }
 
-    .contact-grid h3 {
+    .contact-grid h3,
+    .admin-form h3 {
       font-size: 1.4rem;
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 1rem;
     }
 
-    .contact-grid p {
+    .contact-grid p,
+    .admin-form p {
       color: var(--gray-400);
       margin-bottom: 0.75rem;
     }
 
     .contact-grid input,
-    .contact-grid textarea {
+    .contact-grid textarea,
+    .admin-form input,
+    .admin-form select,
+    .admin-form textarea {
       width: 100%;
       padding: 0.75rem;
       background-color: var(--gray-800);
@@ -479,205 +486,121 @@
     }
 
     .contact-grid input:focus,
-    .contact-grid textarea:focus {
-      box-shadow: 0 0 0 2px var(--accent);
-    }
-
-    .contact-grid textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .contact-grid button {
-      width: 100%;
-      padding: 0.75rem;
-      background-color: var(--accent);
-      color: var(--white);
-      font-weight: 600;
-      border: none;
-      border-radius: 0.5rem;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .contact-grid button:hover {
-      background-color: #2563eb;
-    }
-
-    .admin-login,
-    .admin-dashboard {
-      max-width: 1000px;
-      margin: 2rem auto;
-      background-color: var(--gray-900);
-      padding: 2rem;
-      border-radius: 0.75rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    }
-
-    .admin-login h2,
-    .admin-dashboard h2 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-
-    .admin-login input {
-      width: 100%;
-      padding: 0.75rem;
-      background-color: var(--gray-800);
-      border: none;
-      border-radius: 0.5rem;
-      color: var(--white);
-      font-size: 1rem;
-      margin-bottom: 1rem;
-      outline: none;
-    }
-
-    .admin-login input:focus {
-      box-shadow: 0 0 0 2px var(--accent);
-    }
-
-    .admin-login button,
-    .admin-dashboard button {
-      width: 100%;
-      padding: 0.75rem;
-      background-color: var(--accent);
-      color: var(--white);
-      font-weight: 600;
-      border: none;
-      border-radius: 0.5rem;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .admin-login button:hover,
-    .admin-dashboard button:hover {
-      background-color: #2563eb;
-    }
-
-    .admin-dashboard .stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    .admin-dashboard .stat-card {
-      background-color: var(--gray-800);
-      padding: 1rem;
-      border-radius: 0.5rem;
-      text-align: center;
-    }
-
-    .admin-dashboard .stat-card h4 {
-      font-size: 1.1rem;
-      color: var(--gray-300);
-      margin-bottom: 0.5rem;
-    }
-
-    .admin-dashboard .stat-card p {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: var(--white);
-    }
-
-    .admin-form {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    .admin-form input,
-    .admin-form textarea,
-    .admin-form .image-input {
-      width: 100%;
-      padding: 0.75rem;
-      background-color: var(--gray-800);
-      border: none;
-      border-radius: 0.5rem;
-      color: var(--white);
-      font-size: 1rem;
-      outline: none;
-    }
-
+    .contact-grid textarea:focus,
     .admin-form input:focus,
-    .admin-form textarea:focus,
-    .admin-form .image-input:focus {
-      box-shadow: 0 0 0 2px var(--accent);
+    .admin-form select:focus,
+    .admin-form textarea:focus {
+      box-shadow: 0 0 0 2px var(--primary-accent);
     }
 
+    .contact-grid textarea,
     .admin-form textarea {
-      grid-column: span 2;
       resize: vertical;
       min-height: 120px;
     }
 
-    .admin-form .image-input {
-      margin-bottom: 0.5rem;
-    }
-
+    .contact-grid button,
     .admin-form button {
-      grid-column: span 2;
-    }
-
-    .admin-form .cancel-btn {
-      background-color: var(--gray-700);
+      width: 100%;
+      padding: 0.75rem;
+      background-color: var(--primary-accent);
       color: var(--white);
-    }
-
-    .admin-form .cancel-btn:hover {
-      background-color: var(--gray-600);
-    }
-
-    .manage-listings h3 {
-      font-size: 1.4rem;
       font-weight: 600;
-      margin: 2rem 0 1rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
     }
 
-    .manage-listings .property-card .actions {
-      display: flex;
-      gap: 0.5rem;
-      margin-top: 1rem;
+    .admin-form .update-btn {
+      background-color: var(--secondary-accent);
     }
 
-    .manage-listings .property-card .actions button {
-      flex: 1;
-      padding: 0.5rem;
-      font-size: 0.95rem;
+    .contact-grid button:hover,
+    .admin-form button:hover {
+      background-color: #155251;
     }
 
-    .manage-listings .property-card .actions .edit-btn {
-      background-color: var(--gray-700);
-      color: var(--white);
+    .admin-form .update-btn:hover {
+      background-color: #b88e14;
     }
 
-    .manage-listings .property-card .actions .edit-btn:hover {
-      background-color: var(--gray-600);
+    .compliance-section {
+      background-color: var(--jet-black);
+      border-top: 1px solid var(--gray-800);
+      padding: 1rem;
+      text-align: center;
+      color: var(--gray-400);
     }
 
-    .manage-listings .property-card .actions .delete-btn {
-      background-color: #dc2626;
-      color: var(--white);
-    }
-
-    .manage-listings .property-card .actions .delete-btn:hover {
-      background-color: #b91c1c;
+    .compliance-section p {
+      margin-bottom: 0.5rem;
     }
 
     footer {
-      background-color: var(--jet-black);
-      border-top: 1px solid var(--gray-800);
-      padding: 2rem;
-      text-align: center;
+      background-color: var(--gray-900);
+      padding: 3rem 1rem;
       color: var(--gray-400);
       font-size: 0.95rem;
+      border-top: 1px solid var(--gray-800);
     }
 
-    footer p {
+    .footer-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-column h4 {
+      font-family: 'Lora', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary-accent);
+      margin-bottom: 1rem;
+    }
+
+    .footer-column p,
+    .footer-column li {
+      color: var(--gray-400);
       margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column a {
+      color: var(--gray-400);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-column a:hover {
+      color: var(--secondary-accent);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 1rem;
+      border-top: 1px solid var(--gray-800);
+    }
+
+    .footer-bottom p {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-bottom .affiliations span::after {
+      content: ' | ';
+      color: var(--gray-600);
+      margin: 0 0.5rem;
+    }
+
+    .footer-bottom .affiliations span:last-child::after {
+      content: '';
     }
 
     @media (max-width: 768px) {
@@ -687,9 +610,8 @@
         grid-template-columns: 1fr;
       }
 
-      .admin-form textarea,
-      .admin-form button {
-        grid-column: span 1;
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
       }
 
       .nav-container {
@@ -710,12 +632,22 @@
         flex-direction: column;
       }
 
-      .property-grid {
+      .service-grid,
+      .property-grid,
+      .admin-grid {
         grid-template-columns: 1fr;
       }
 
       .about-image {
         height: 200px;
+      }
+
+      .intro-section h1 {
+        font-size: 2.5rem;
+      }
+
+      .intro-section p {
+        font-size: 1.2rem;
       }
 
       .modal-content {
@@ -725,13 +657,13 @@
       .modal-content .image-carousel {
         height: 300px;
       }
-
-      .date-picker {
-        flex-direction: column;
-      }
     }
 
     @media (max-width: 480px) {
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+
       .nav-container h1 {
         font-size: 1.5rem;
       }
@@ -745,7 +677,9 @@
         min-width: 100%;
       }
 
-      .property-card .content {
+      .service-card .content,
+      .property-card .content,
+      .admin-card .content {
         padding: 1rem;
       }
 
@@ -771,66 +705,118 @@
 <body>
   <nav>
     <div class="nav-container">
-      <h1 onclick="showPage('home')">PropertyHub</h1>
+      <h1 onclick="showPage('home')">Queensland Valuers Limited</h1>
       <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
       <div class="nav-links">
         <a href="#" onclick="showPage('home')" aria-label="Home page">Home</a>
         <a href="#" onclick="showPage('about')" aria-label="About us page">About Us</a>
+        <a href="#" onclick="showPage('services')" aria-label="Services page">Services</a>
+        <a href="#" onclick="showPage('properties')" aria-label="Properties page">Properties</a>
         <a href="#" onclick="showPage('contact')" aria-label="Contact page">Contact</a>
-        <a href="#" onclick="showPage('wishlist')" class="wishlist-link" aria-label="Wishlist page">
-          Wishlist
-          <span class="wishlist-counter" id="wishlist-counter">0</span>
-        </a>
       </div>
     </div>
   </nav>
 
   <div id="home-page" class="container">
+    <div class="intro-section">
+      <h1>Queensland Valuers Limited</h1>
+      <p>Your Concern is Our Priority</p>
+    </div>
     <div class="search-bar">
-      <input type="text" id="search-location" placeholder="Location (e.g., Westlands)" aria-label="Search by location">
-      <select id="search-bedrooms" aria-label="Select number of bedrooms">
-        <option value="">Bedrooms</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3+</option>
+      <input type="text" id="search-location" placeholder="Location (e.g., Kilimani)" aria-label="Search by location">
+      <select id="search-type" aria-label="Select property type">
+        <option value="">Property Type</option>
+        <option value="residential">Residential</option>
+        <option value="commercial">Commercial</option>
+        <option value="land">Land</option>
       </select>
-      <select id="search-bathrooms" aria-label="Select number of bathrooms">
-        <option value="">Bathrooms</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3+</option>
-      </select>
-      <input type="number" id="search-price" placeholder="Max Price per Night (KSh)" aria-label="Maximum price per night">
+      <input type="number" id="search-price" placeholder="Max Price (KSh)" aria-label="Maximum price">
       <button onclick="searchProperties()" aria-label="Search properties">Search</button>
     </div>
     <div class="section">
-      <h2>All Properties</h2>
+      <h2>Featured Properties</h2>
       <div class="property-grid" id="property-grid"></div>
     </div>
   </div>
 
-  <div id="wishlist-page" class="container" style="display: none;">
-    <div class="wishlist-section">
-      <h2>Your Wishlist</h2>
-      <div class="property-grid" id="wishlist-grid"></div>
+  <div id="services-page" class="container" style="display: none;">
+    <div class="section">
+      <h2>Our Services</h2>
+      <div class="service-grid">
+        <div class="service-card fade-in">
+          <div class="content">
+            <h3>Property Valuation</h3>
+            <p>Our expert valuers provide precise valuations for land, homes, and commercial properties, tailored for sales, loans, insurance, or audits.</p>
+            <p>We use global standards (RICS Red Book + IVS) to ensure accuracy and trust.</p>
+          </div>
+        </div>
+        <div class="service-card fade-in">
+          <div class="content">
+            <h3>Real Estate Management</h3>
+            <p>We manage your residential, office, or retail properties with care and precision, handling maintenance and utilities seamlessly.</p>
+            <p>Our local teams and smart systems deliver stress-free ownership.</p>
+          </div>
+        </div>
+        <div class="service-card fade-in">
+          <div class="content">
+            <h3>Property Research</h3>
+            <p>Gain clear market insights with our data-driven analysis of rent trends, development potential, and sector forecasts.</p>
+            <p>Trusted by landlords, developers, and investors across Kenya.</p>
+          </div>
+        </div>
+        <div class="service-card fade-in">
+          <div class="content">
+            <h3>Site & Space Acquisition</h3>
+            <p>We guide you through finding and securing the perfect plot or unit, verifying legal status, and negotiating the best terms.</p>
+            <p>Comprehensive support for individuals and businesses.</p>
+          </div>
+        </div>
+        <div class="service-card fade-in">
+          <div class="content">
+            <h3>Letting & Sales</h3>
+            <p>Let, lease, or sell your home, office, warehouse, or retail space with confidence.</p>
+            <p>Our decisions are guided by tenant demand and location insights.</p>
+          </div>
+        </div>
+        <div class="service-card fade-in">
+          <div class="content">
+            <h3>Construction & Hospitality Consulting</h3>
+            <p>From project oversight to cost control, we support your construction and hotel/resort ventures with strategic expertise.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="properties-page" class="container" style="display: none;">
+    <div class="section">
+      <h2>Property Listings</h2>
+      <div class="property-grid" id="property-grid-all"></div>
     </div>
   </div>
 
   <div id="about-page" class="container" style="display: none;">
     <div class="section about-section">
-      <h2>About PropertyHub</h2>
+      <h2>About QVL</h2>
       <div class="about-content">
         <div>
-          <h3>Our Mission</h3>
-          <p>At PropertyHub, we connect travelers and homeowners with exceptional stays in Nairobi. Inspired by platforms like Airbnb, we offer a curated selection of premium properties tailored to your needs.</p>
-          <p>Founded in 2025, our team is dedicated to making your stay in Nairobi seamless, secure, and memorable. From modern apartments in Westlands to cozy homes in Karen, PropertyHub is your trusted partner for extraordinary accommodations.</p>
+          <h3>Who We Are</h3>
+          <p>Founded in 2022 and based in Kilimani, Nairobi, Queensland Valuers Limited is your trusted real estate consultancy. Our team of licensed valuers, surveyors, and property managers delivers solutions with local insight and global standards.</p>
         </div>
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Luxury Property" class="about-image">
-        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2" alt="Modern Interior" class="about-image">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="QVL Office" class="about-image">
         <div>
-          <h3>Why Choose Us?</h3>
-          <p>We prioritize quality, trust, and user experience. Our platform offers verified listings, intuitive search tools, and 24/7 customer support. Every property is vetted to ensure comfort and authenticity.</p>
-          <p>Join thousands of satisfied guests and hosts who trust PropertyHub for their travel and hosting needs in Nairobi. Discover your next home away from home today.</p>
+          <h3>What Sets Us Apart</h3>
+          <p>- Licensed under Kenya’s Valuers and Estate Agents Acts<br>
+             - Proud members of ISK, VRB, and EARB<br>
+             - Serving all of Kenya with a regional focus<br>
+             - Adhering to RICS and IVSC global standards<br>
+             - Client-first approach with tailored, experience-driven solutions</p>
+        </div>
+        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2" alt="Property Valuation" class="about-image">
+        <div>
+          <h3>Our Vision</h3>
+          <p>We aim to be East Africa’s leading partner for professional real estate services.</p>
+          <p><strong>Our Motto:</strong> “Your Concern is Our Priority.”</p>
         </div>
       </div>
     </div>
@@ -841,11 +827,13 @@
       <h2>Contact Us</h2>
       <div class="contact-grid">
         <div>
-          <h3>Get in Touch</h3>
-          <p>Questions about a property or need help? We're here for you!</p>
-          <p>Email: support@propertyhub.co.ke</p>
-          <p>Phone: +254 123 456 789</p>
-          <p>Address: 123 Riverside Drive, Westlands, Nairobi, Kenya</p>
+          <h3>Ready to Connect?</h3>
+          <p>Have questions or need expert property advice? Our team is here to assist you.</p>
+          <p><strong>Elizabeth Wakabari Wanjohi:</strong> +254 726 790 685</p>
+          <p><strong>Milkah Muthoni Kariuki:</strong> +254 726 849 665</p>
+          <p><strong>Email:</strong> qvaluers@gmail.com / qvaluers@yahoo.com</p>
+          <p><strong>Address:</strong> Timau Plaza, 2nd Floor, Argwings Kodhek Road, Kilimani, Nairobi</p>
+          <p><strong>P.O. Box:</strong> 38790, Nairobi GPO</p>
         </div>
         <div>
           <input type="text" id="contact-name" placeholder="Your Name" aria-label="Your name">
@@ -857,51 +845,33 @@
     </div>
   </div>
 
-  <div id="dashboard-page" class="container" style="display: none;">
-    <div id="admin-login" class="admin-login">
-      <h2>Admin Login</h2>
-      <input type="password" id="admin-password" placeholder="Enter admin password" aria-label="Admin password">
-      <button onclick="login()" aria-label="Login to admin dashboard">Login</button>
-    </div>
-    <div id="admin-dashboard" class="admin-dashboard" style="display: none;">
+  <div id="admin-page" class="container" style="display: none;">
+    <div class="section admin-section">
       <h2>Admin Dashboard</h2>
-      <div class="stats">
-        <div class="stat-card">
-          <h4>Total Listings</h4>
-          <p id="stat-total">0</p>
-        </div>
-        <div class="stat-card">
-          <h4>Average Price</h4>
-          <p id="stat-avg-price">KSh 0</p>
-        </div>
-        <div class="stat-card">
-          <h4>Locations</h4>
-          <p id="stat-locations">0</p>
+      <div class="admin-form">
+        <div>
+          <h3>Add/Edit Property</h3>
+          <input type="text" id="admin-title" placeholder="Property Title" aria-label="Property title">
+          <input type="text" id="admin-location" placeholder="Location" aria-label="Property location">
+          <input type="number" id="admin-price" placeholder="Price (KSh)" aria-label="Property price">
+          <select id="admin-type" aria-label="Property type">
+            <option value="">Select Type</option>
+            <option value="residential">Residential</option>
+            <option value="commercial">Commercial</option>
+            <option value="land">Land</option>
+          </select>
+          <textarea id="admin-details" placeholder="Details" aria-label="Property details"></textarea>
+          <textarea id="admin-services" placeholder="Services" aria-label="Property services"></textarea>
+          <input type="file" id="admin-images" accept="image/*" multiple aria-label="Upload up to 5 images (minimum 3)">
+          <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+            <button id="add-btn" onclick="addProperty()" aria-label="Add new property">Add New Property</button>
+            <button id="update-btn" class="update-btn" onclick="updateProperty()" aria-label="Update property" style="display: none;">Update Property</button>
+          </div>
         </div>
       </div>
-      <div class="admin-form" id="property-form">
-        <input type="text" id="form-title" placeholder="Title" aria-label="Property title">
-        <input type="text" id="form-location" placeholder="Location (e.g., Westlands)" aria-label="Property location">
-        <input type="number" id="form-price" placeholder="Price per Night (KSh)" aria-label="Price per night">
-        <input type="number" id="form-bedrooms" placeholder="Bedrooms" aria-label="Number of bedrooms">
-        <input type="number" id="form-bathrooms" placeholder="Bathrooms" aria-label="Number of bathrooms">
-        <textarea id="form-description" placeholder="Description" aria-label="Property description"></textarea>
-        <input type="file" accept="image/*" class="image-input" id="form-image-1" onchange="previewImage(1)" aria-label="Upload first image">
-        <img id="preview-image-1" style="display: none; max-width: 100%; height: auto; margin-bottom: 0.5rem;" alt="Preview first image">
-        <input type="file" accept="image/*" class="image-input" id="form-image-2" onchange="previewImage(2)" aria-label="Upload second image">
-        <img id="preview-image-2" style="display: none; max-width: 100%; height: auto; margin-bottom: 0.5rem;" alt="Preview second image">
-        <input type="file" accept="image/*" class="image-input" id="form-image-3" onchange="previewImage(3)" aria-label="Upload third image">
-        <img id="preview-image-3" style="display: none; max-width: 100%; height: auto; margin-bottom: 0.5rem;" alt="Preview third image">
-        <input type="file" accept="image/*" class="image-input" id="form-image-4" onchange="previewImage(4)" aria-label="Upload fourth image">
-        <img id="preview-image-4" style="display: none; max-width: 100%; height: auto; margin-bottom: 0.5rem;" alt="Preview fourth image">
-        <input type="file" accept="image/*" class="image-input" id="form-image-5" onchange="previewImage(5)" aria-label="Upload fifth image">
-        <img id="preview-image-5" style="display: none; max-width: 100%; height: auto; margin-bottom: 0.5rem;" alt="Preview fifth image">
-        <button onclick="saveProperty()" aria-label="Add or update property">Add Property</button>
-        <button class="cancel-btn" id="cancel-btn" onclick="cancelEdit()" style="display: none;" aria-label="Cancel edit">Cancel Edit</button>
-      </div>
-      <div class="manage-listings">
-        <h3>Manage Listings</h3>
-        <div class="property-grid" id="admin-property-grid"></div>
+      <div class="section">
+        <h2>Manage Properties</h2>
+        <div class="admin-grid" id="admin-grid"></div>
       </div>
     </div>
   </div>
@@ -918,352 +888,194 @@
       <h3 id="modal-title"></h3>
       <p id="modal-location"></p>
       <p id="modal-price" class="price"></p>
-      <p id="modal-rooms"></p>
-      <p id="modal-description"></p>
-      <div class="date-picker">
-        <input type="date" id="check-in" placeholder="Check-in Date" aria-label="Check-in date">
-        <input type="date" id="check-out" placeholder="Check-out Date" aria-label="Check-out date" disabled>
-        <label>
-          <input type="checkbox" id="indefinite-stay" onclick="toggleIndefinite()" aria-label="Indefinite stay"> Indefinite Stay
-        </label>
-      </div>
-      <a id="book-phone-btn" class="book-btn" href="tel:+254746779950" onclick="confirmBooking('phone')" aria-label="Book via phone">Book via Phone</a>
-      <a id="book-email-btn" class="book-btn" href="#" onclick="confirmBooking('email')" aria-label="Book via email">Book via Email</a>
+      <p id="modal-details"></p>
+      <p id="modal-services"></p>
+      <a id="book-phone-btn" class="book-btn" href="#" aria-label="Book via phone">Book via Phone</a>
+      <a id="book-email-btn" class="book-btn" href="#" aria-label="Book via email">Book via Email</a>
     </div>
   </div>
 
+  <div class="compliance-section">
+    <p>Our services meet RICS and IVS global standards.</p>
+  </div>
+
   <footer>
-    <p>© 2025 PropertyHub. All rights reserved.</p>
-    <p>Designed for extraordinary stays in Nairobi.</p>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h4>QVL</h4>
+        <p>Queensland Valuers Limited is a Kenyan-based professional real estate consultancy founded in 2022. Our team consists of licensed valuers, surveyors, and property managers.</p>
+      </div>
+      <div class="footer-column">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="#" onclick="showPage('services')">Property Valuation</a></li>
+          <li><a href="#" onclick="showPage('services')">Real Estate Management</a></li>
+          <li><a href="#" onclick="showPage('services')">Property Research</a></li>
+          <li><a href="#" onclick="showPage('services')">Site Acquisition</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Property Types</h4>
+        <ul>
+          <li><a href="#" onclick="showPage('properties')">Residential</a></li>
+          <li><a href="#" onclick="showPage('properties')">Commercial</a></li>
+          <li><a href="#" onclick="showPage('properties')">Industrial</a></li>
+          <li><a href="#" onclick="showPage('properties')">Land</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Contact Us</h4>
+        <p>Timau Plaza, 2nd Floor<br>Argwings Kodhek Road, Kilimani<br>Nairobi, Kenya</p>
+        <p>P.O. Box 38790, Nairobi GPO</p>
+        <p><a href="tel:+254726790685">Elizabeth: +254 726 790 685</a></p>
+        <p><a href="tel:+254726849665">Milkah: +254 726 849 665</a></p>
+        <p><a href="mailto:qvaluers@gmail.com">qvaluers@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Licensed by: <span>VRB</span><span>EARB</span><span>ISK</span></p>
+      <p>Affiliated with: <span>FIG</span><span>APSEA</span><span>CASLE</span></p>
+      <p>© 2025 Queensland Valuers Limited. All rights reserved.</p>
+    </div>
   </footer>
 
-  <script type="module">
-    // Import Firebase SDKs
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-analytics.js";
-    import { getDatabase, ref, set, onValue, remove } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-database.js";
+  <script>
+    const ADMIN_PASSWORD = 'QVL';
+    let editingPropertyId = null;
 
-    // Firebase configuration
-    const firebaseConfig = {
-      apiKey: "AIzaSyDv8RbeQ2P8Ak2CARC3GIojE-OZcSatDH4",
-      authDomain: "property-catalogue.firebaseapp.com",
-      databaseURL: "https://property-catalogue-default-rtdb.firebaseio.com",
-      projectId: "property-catalogue",
-      storageBucket: "property-catalogue.firebasestorage.app",
-      messagingSenderId: "328294209648",
-      appId: "1:328294209648:web:1de6f3f84c235bf58afcb5",
-      measurementId: "G-PQ798GDT6C"
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-    const db = getDatabase(app);
-
-    // Initial properties (used only if Firebase is empty)
     const initialProperties = [
       {
         id: 1,
-        title: "Luxury Apartment in Westlands",
-        location: "Westlands, Nairobi",
-        price: 15000,
-        bedrooms: 2,
-        bathrooms: 2,
-        description: "Modern apartment with stunning city views and high-end amenities in the heart of Westlands.",
-        images: [
-          "https://images.unsplash.com/photo-1613490493576-7fde63acd811",
-          "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
-          "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2"
-        ]
-      },
-      {
-        id: 2,
-        title: "Cozy Villa in Kilimani",
+        title: "2BR Apartment in Kilimani",
         location: "Kilimani, Nairobi",
-        price: 25000,
-        bedrooms: 3,
-        bathrooms: 3,
-        description: "Spacious villa with a private garden, perfect for families in Kilimani.",
+        price: 9500000,
+        type: "residential",
+        details: "Fully verified with a clean title deed",
+        services: "Managed by QVL with regular inspections and utility oversight",
         images: [
           "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
-          "https://images.unsplash.com/photo-1570129477492-45c003edd2be",
-          "https://images.unsplash.com/photo-1518780664697-55e3ad937233",
           "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2",
           "https://images.unsplash.com/photo-1613490493576-7fde63acd811"
         ]
       },
       {
-        id: 3,
-        title: "Executive Home in Lavington",
-        location: "Lavington, Nairobi",
-        price: 20000,
-        bedrooms: 4,
-        bathrooms: 3,
-        description: "Elegant home with ample parking and serene views in Lavington.",
+        id: 2,
+        title: "Commercial Office in Westlands",
+        location: "Westlands, Nairobi",
+        price: 15000000,
+        type: "commercial",
+        details: "Prime location with high foot traffic",
+        services: "Professionally valued, ready for letting",
         images: [
-          "https://images.unsplash.com/photo-1512917774080-9991f7c4c60d",
-          "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
-          "https://images.unsplash.com/photo-1570129477492-45c003edd2be"
+          "https://images.unsplash.com/photo-1486406146925-3b41f0cf4693",
+          "https://images.unsplash.com/photo-14973662105479-4275897d473e",
+          "https://images.unsplash.com/photo-1542744096-0a8a4a7a9a1b"
+        ]
+      },
+      {
+        id: 3,
+        title: "Vacant Land in Karen",
+        location: "Karen, Nairobi",
+        price: 5000000,
+        type: "land",
+        details: "Clean title, perfect for residential development",
+        services: "Valued by QVL with full acquisition support",
+        images: [
+          "https://images.unsplash.com/photo-1590247813695-69534b4574b5",
+          "https://images.unsplash.com/photo-1500382017468-9049fed747ef",
+          "https://images.unsplash.com/photo-1580587771525-78b9f0f89f76"
         ]
       },
       {
         id: 4,
-        title: "Modern Studio in Kileleshwa",
-        location: "Kileleshwa, Nairobi",
-        price: 8000,
-        bedrooms: 1,
-        bathrooms: 1,
-        description: "Sleek studio ideal for solo travelers or professionals in Kileleshwa.",
+        title: "3BR Townhouse in Lavington",
+        location: "Lavington, Nairobi",
+        price: 12000000,
+        type: "residential",
+        details: "Modern design with spacious interiors",
+        services: "QVL-managed with maintenance and security services",
         images: [
+          "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
           "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2",
-          "https://images.unsplash.com/photo-1613490493576-7fde63acd811",
-          "https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+          "https://images.unsplash.com/photo-1613490493576-7fde63acd811"
         ]
       },
       {
         id: 5,
-        title: "Charming Cottage in Karen",
-        location: "Karen, Nairobi",
-        price: 12000,
-        bedrooms: 2,
-        bathrooms: 2,
-        description: "Cozy cottage with a private patio and lush greenery in Karen.",
+        title: "Retail Space in CBD",
+        location: "Nairobi CBD",
+        price: 20000000,
+        type: "commercial",
+        details: "High-visibility location ideal for businesses",
+        services: "Valued and managed by QVL for optimal leasing",
         images: [
-          "https://images.unsplash.com/photo-1518780664697-55e3ad937233",
-          "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
-          "https://images.unsplash.com/photo-1570129477492-45c003edd2be"
+          "https://images.unsplash.com/photo-1486406146925-3b41f0cf4693",
+          "https://images.unsplash.com/photo-14973662105479-4275897d473e",
+          "https://images.unsplash.com/photo-1542744096-0a8a4a7a9a1b"
         ]
       },
       {
         id: 6,
-        title: "Penthouse in Upper Hill",
-        location: "Upper Hill, Nairobi",
-        price: 30000,
-        bedrooms: 3,
-        bathrooms: 4,
-        description: "Luxurious penthouse with panoramic city views in Upper Hill.",
-        images: [
-          "https://images.unsplash.com/photo-1570129477492-45c003edd2be",
-          "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
-          "https://images.unsplash.com/photo-1512917774080-9991f7c4c60d",
-          "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2"
-        ]
-      },
-      {
-        id: 7,
-        title: "Family House in Runda",
+        title: "Residential Plot in Runda",
         location: "Runda, Nairobi",
-        price: 18000,
-        bedrooms: 3,
-        bathrooms: 2,
-        description: "Spacious family home with modern upgrades in the serene Runda estate.",
+        price: 8000000,
+        type: "land",
+        details: "Prime plot in a secure, upscale neighborhood",
+        services: "QVL provides valuation and acquisition support",
         images: [
-          "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
-          "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2",
-          "https://images.unsplash.com/photo-1512917774080-9991f7c4c60d"
+          "https://images.unsplash.com/photo-1590247813695-69534b4574b5",
+          "https://images.unsplash.com/photo-1500382017468-9049fed747ef",
+          "https://images.unsplash.com/photo-1580587771525-78b9f0f89f76"
         ]
       }
     ];
 
-    // State variables
-    let properties = [];
-    let wishlist = [];
-    let isAuthenticated = false;
-    let editingId = null;
-    let filteredProperties = [];
-    let imagePreviews = {};
-    const today = new Date().toISOString().split('T')[0];
-    const userId = localStorage.getItem('userId') || `user_${Math.random().toString(36).substr(2, 9)}`;
-    localStorage.setItem('userId', userId);
+    let properties = JSON.parse(localStorage.getItem('properties')) || initialProperties;
+    let filteredProperties = [...properties];
 
-    // Initialize properties in Firebase if empty
-    const propertiesRef = ref(db, 'properties');
-    onValue(propertiesRef, (snapshot) => {
-      const data = snapshot.val();
-      if (!data) {
-        initialProperties.forEach(prop => {
-          set(ref(db, `properties/${prop.id}`), prop)
-            .catch(error => console.error('Error initializing property:', error));
-        });
-      } else {
-        properties = Object.values(data).map(prop => ({
-          ...prop,
-          id: parseInt(prop.id)
-        }));
-        filteredProperties = [...properties];
-        renderProperties();
-        updateStats();
-      }
-    }, {
-      onlyOnce: true
-    });
-
-    // Listen for real-time property updates
-    onValue(propertiesRef, (snapshot) => {
-      const data = snapshot.val();
-      if (data) {
-        properties = Object.values(data).map(prop => ({
-          ...prop,
-          id: parseInt(prop.id)
-        }));
-        filteredProperties = [...properties];
-        renderProperties();
-        updateStats();
-      }
-    });
-
-    // Listen for wishlist updates
-    const wishlistRef = ref(db, `wishlist/${userId}`);
-    onValue(wishlistRef, (snapshot) => {
-      const data = snapshot.val();
-      wishlist = data ? Object.values(data) : [];
+    function saveProperties() {
+      localStorage.setItem('properties', JSON.stringify(properties));
+      filteredProperties = [...properties];
       renderProperties();
-      updateWishlistCounter();
-    });
-
-    // Preview uploaded image and store as base64
-    function previewImage(index) {
-      const fileInput = document.getElementById(`form-image-${index}`);
-      const preview = document.getElementById(`preview-image-${index}`);
-      const file = fileInput.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          preview.src = e.target.result;
-          preview.style.display = 'block';
-          imagePreviews[index] = e.target.result; // Store base64 string
-        };
-        reader.readAsDataURL(file);
-      } else {
-        preview.style.display = 'none';
-        delete imagePreviews[index];
-      }
+      renderAdminProperties();
     }
 
-    // Toggle hamburger menu
     function toggleMenu() {
       const navLinks = document.querySelector('.nav-links');
       navLinks.classList.toggle('mobile');
       navLinks.classList.toggle('active');
     }
 
-    // Scroll carousel
     function scrollCarousel(carouselId, direction) {
       const carousel = document.getElementById(carouselId);
       const scrollAmount = carousel.offsetWidth;
       carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
     }
 
-    // Update wishlist counter
-    function updateWishlistCounter() {
-      document.getElementById('wishlist-counter').textContent = wishlist.length;
-    }
-
-    // Toggle wishlist
-    function toggleWishlist(id) {
-      const index = wishlist.indexOf(id);
-      if (index !== -1) {
-        wishlist.splice(index, 1);
-      } else {
-        wishlist.push(id);
-      }
-      set(wishlistRef, wishlist)
-        .catch(error => {
-          console.error('Error updating wishlist:', error);
-          alert('Failed to update wishlist. Please try again.');
-        });
-    }
-
-    // Toggle indefinite stay
-    function toggleIndefinite() {
-      const indefinite = document.getElementById('indefinite-stay').checked;
-      const checkOut = document.getElementById('check-out');
-      checkOut.disabled = indefinite;
-      checkOut.value = indefinite ? '' : checkOut.value;
-      updateBookingEmail();
-    }
-
-    // Validate dates
-    function validateDates(checkIn, checkOut, indefinite) {
-      if (!checkIn) return "Please select a check-in date.";
-      if (new Date(checkIn) < new Date(today)) return "Check-in date cannot be in the past.";
-      if (!indefinite && checkOut && new Date(checkOut) <= new Date(checkIn)) {
-        return "Check-out date must be after check-in date.";
-      }
-      return null;
-    }
-
-    // Update booking email
-    function updateBookingEmail() {
-      const modalTitle = document.getElementById('modal-title').textContent;
-      const property = properties.find(p => p.title === modalTitle);
-      if (property) {
-        const checkIn = document.getElementById('check-in').value;
-        const checkOut = document.getElementById('indefinite-stay').checked ? 'Indefinite' : document.getElementById('check-out').value;
-        const subject = encodeURIComponent(`Booking Request: ${property.title}`);
-        const body = encodeURIComponent(
-          `Property: ${property.title}\n` +
-          `Location: ${property.location}\n` +
-          `Price: KSh ${property.price.toLocaleString()}/night\n` +
-          `Bedrooms: ${property.bedrooms}\n` +
-          `Bathrooms: ${property.bathrooms}\n` +
-          `Description: ${property.description}\n` +
-          `Check-in: ${checkIn || 'Not specified'}\n` +
-          `Check-out: ${checkOut || 'Not specified'}\n\n` +
-          `Please confirm availability and provide further details.`
-        );
-        document.getElementById('book-email-btn').href = `mailto:bookings@propertyhub.co.ke?subject=${subject}&body=${body}`;
-      }
-    }
-
-    // Confirm booking action
-    function confirmBooking(method) {
-      const checkIn = document.getElementById('check-in').value;
-      const checkOut = document.getElementById('check-out').value;
-      const indefinite = document.getElementById('indefinite-stay').checked;
-      const validationError = validateDates(checkIn, checkOut, indefinite);
-      if (validationError) {
-        alert(validationError);
-        return false;
-      }
-      alert(`Opening your ${method === 'phone' ? 'phone app' : 'email client'} to book this property.`);
-      return true;
-    }
-
-    // Open property modal
     function openModal(id) {
       const property = properties.find(p => p.id === id);
       if (!property) return;
 
       document.getElementById('modal-title').textContent = property.title;
       document.getElementById('modal-location').textContent = property.location;
-      document.getElementById('modal-price').textContent = `KSh ${property.price.toLocaleString()}/night`;
-      document.getElementById('modal-rooms').textContent = `${property.bedrooms} bed • ${property.bathrooms} bath`;
-      document.getElementById('modal-description').textContent = property.description;
+      document.getElementById('modal-price').textContent = `KSh ${property.price.toLocaleString()}`;
+      document.getElementById('modal-details').textContent = property.details;
+      document.getElementById('modal-services').textContent = property.services;
       document.getElementById('modal-images').innerHTML = property.images
         .filter(img => img)
         .map(img => `<img src="${img}" alt="${property.title}">`)
         .join('');
 
-      document.getElementById('check-in').value = '';
-      document.getElementById('check-out').value = '';
-      document.getElementById('indefinite-stay').checked = false;
-      document.getElementById('check-out').disabled = false;
-      updateBookingEmail();
+      document.getElementById('book-phone-btn').href = `tel:+254726790685`;
+      document.getElementById('book-email-btn').href = `mailto:qvaluers@gmail.com?subject=Inquiry: ${encodeURIComponent(property.title)}&body=I'm interested in ${encodeURIComponent(property.title)} located in ${encodeURIComponent(property.location)}. Please provide more details.`;
 
       document.getElementById('property-modal').style.display = 'flex';
     }
 
-    // Close modal
     function closeModal() {
       document.getElementById('property-modal').style.display = 'none';
-      document.getElementById('check-in').value = '';
-      document.getElementById('check-out').value = '';
-      document.getElementById('indefinite-stay').checked = false;
-      document.getElementById('check-out').disabled = false;
     }
 
-    // Send contact email
     function sendContactEmail() {
       const name = document.getElementById('contact-name').value;
       const email = document.getElementById('contact-email').value;
@@ -1276,21 +1088,277 @@
 
       const subject = encodeURIComponent('Contact Form Submission');
       const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
-      window.location.href = `mailto:support@propertyhub.co.ke?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:qvaluers@gmail.com?subject=${subject}&body=${body}`;
       alert('Opening your email client...');
     }
 
-    // Render properties on home, wishlist, and admin pages
+    function promptAdminLogin() {
+      const password = prompt('Enter admin password:');
+      if (password === ADMIN_PASSWORD) {
+        showPage('admin');
+      } else {
+        alert('Incorrect password');
+      }
+    }
+
+    function addProperty() {
+      const title = document.getElementById('admin-title').value;
+      const location = document.getElementById('admin-location').value;
+      const price = parseInt(document.getElementById('admin-price').value);
+      const type = document.getElementById('admin-type').value;
+      const details = document.getElementById('admin-details').value;
+      const services = document.getElementById('admin-services').value;
+      const imageFiles = document.getElementById('admin-images').files;
+
+      if (!title || !location || !price || !type || !details || !services) {
+        alert('Please fill all fields');
+        return;
+      }
+
+      if (imageFiles.length > 5) {
+        alert('You can upload a maximum of 5 images.');
+        return;
+      }
+
+      const images = [];
+      const defaultImages = [
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+        "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2",
+        "https://images.unsplash.com/photo-1613490493576-7fde63acd811",
+        "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde",
+        "https://images.unsplash.com/photo-1600585153490-76fb20a32601"
+      ];
+
+      if (imageFiles.length >= 3) {
+        const promises = Array.from(imageFiles).map(file => {
+          return new Promise(resolve => {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+              images.push(e.target.result);
+              resolve();
+            };
+            reader.readAsDataURL(file);
+          });
+        });
+        Promise.all(promises).then(() => {
+          const newProperty = {
+            id: properties.length ? Math.max(...properties.map(p => p.id)) + 1 : 1,
+            title,
+            location,
+            price,
+            type,
+            details,
+            services,
+            images
+          };
+          properties.push(newProperty);
+          saveProperties();
+          resetAdminForm();
+          alert('Property added successfully');
+        });
+      } else {
+        if (imageFiles.length > 0) {
+          const promises = Array.from(imageFiles).map(file => {
+            return new Promise(resolve => {
+              const reader = new FileReader();
+              reader.onload = function(e) {
+                images.push(e.target.result);
+                resolve();
+              };
+              reader.readAsDataURL(file);
+            });
+          });
+          Promise.all(promises).then(() => {
+            while (images.length < 3) {
+              images.push(defaultImages[images.length % defaultImages.length]);
+            }
+            const newProperty = {
+              id: properties.length ? Math.max(...properties.map(p => p.id)) + 1 : 1,
+              title,
+              location,
+              price,
+              type,
+              details,
+              services,
+              images
+            };
+            properties.push(newProperty);
+            saveProperties();
+            resetAdminForm();
+            alert('Property added successfully');
+          });
+        } else {
+          images.push(...defaultImages.slice(0, 3));
+          const newProperty = {
+            id: properties.length ? Math.max(...properties.map(p => p.id)) + 1 : 1,
+            title,
+            location,
+            price,
+            type,
+            details,
+            services,
+            images
+          };
+          properties.push(newProperty);
+          saveProperties();
+          resetAdminForm();
+          alert('Property added successfully');
+        }
+      }
+    }
+
+    function editProperty(id) {
+      const property = properties.find(p => p.id === id);
+      if (!property) return;
+
+      editingPropertyId = id;
+      document.getElementById('admin-title').value = property.title;
+      document.getElementById('admin-location').value = property.location;
+      document.getElementById('admin-price').value = property.price;
+      document.getElementById('admin-type').value = property.type;
+      document.getElementById('admin-details').value = property.details;
+      document.getElementById('admin-services').value = property.services;
+      document.getElementById('add-btn').style.display = 'none';
+      document.getElementById('update-btn').style.display = 'block';
+    }
+
+    function updateProperty() {
+      const property = properties.find(p => p.id === editingPropertyId);
+      if (!property) return;
+
+      const title = document.getElementById('admin-title').value;
+      const location = document.getElementById('admin-location').value;
+      const price = parseInt(document.getElementById('admin-price').value);
+      const type = document.getElementById('admin-type').value;
+      const details = document.getElementById('admin-details').value;
+      const services = document.getElementById('admin-services').value;
+      const imageFiles = document.getElementById('admin-images').files;
+
+      if (!title || !location || !price || !type || !details || !services) {
+        alert('Please fill all fields');
+        return;
+      }
+
+      if (imageFiles.length > 5) {
+        alert('You can upload a maximum of 5 images.');
+        return;
+      }
+
+      property.title = title;
+      property.location = location;
+      property.price = price;
+      property.type = type;
+      property.details = details;
+      property.services = services;
+
+      if (imageFiles.length > 0) {
+        const images = [];
+        const promises = Array.from(imageFiles).map(file => {
+          return new Promise(resolve => {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+              images.push(e.target.result);
+              resolve();
+            };
+            reader.readAsDataURL(file);
+          });
+        });
+        Promise.all(promises).then(() => {
+          if (images.length < 3) {
+            const defaultImages = [
+              "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+              "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2",
+              "https://images.unsplash.com/photo-1613490493576-7fde63acd811",
+              "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde",
+              "https://images.unsplash.com/photo-1600585153490-76fb20a32601"
+            ];
+            while (images.length < 3) {
+              images.push(defaultImages[images.length % defaultImages.length]);
+            }
+          }
+          property.images = images;
+          saveProperties();
+          resetAdminForm();
+          alert('Property updated successfully');
+        });
+      } else {
+        if (property.images.length < 3) {
+          const defaultImages = [
+            "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+            "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2",
+            "https://images.unsplash.com/photo-1613490493576-7fde63acd811",
+            "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde",
+            "https://images.unsplash.com/photo-1600585153490-76fb20a32601"
+          ];
+          while (property.images.length < 3) {
+            property.images.push(defaultImages[property.images.length % defaultImages.length]);
+          }
+        }
+        saveProperties();
+        resetAdminForm();
+        alert('Property updated successfully');
+      }
+    }
+
+    function deleteProperty(id) {
+      if (confirm('Are you sure you want to delete this property?')) {
+        properties = properties.filter(p => p.id !== id);
+        saveProperties();
+      }
+    }
+
+    function resetAdminForm() {
+      document.getElementById('admin-title').value = '';
+      document.getElementById('admin-location').value = '';
+      document.getElementById('admin-price').value = '';
+      document.getElementById('admin-type').value = '';
+      document.getElementById('admin-details').value = '';
+      document.getElementById('admin-services').value = '';
+      document.getElementById('admin-images').value = '';
+      document.getElementById('add-btn').style.display = 'block';
+      document.getElementById('update-btn').style.display = 'none';
+      editingPropertyId = null;
+    }
+
+    function renderAdminProperties() {
+      const adminGrid = document.getElementById('admin-grid');
+      adminGrid.innerHTML = '';
+
+      properties.forEach(property => {
+        const card = `
+          <div class="admin-card fade-in" role="button" tabindex="0" aria-label="Manage ${property.title}">
+            <div class="image-carousel" id="carousel-admin-${property.id}">
+              ${property.images.filter(img => img).map(img => `<img src="${img}" alt="${property.title}">`).join('')}
+              <div class="carousel-nav">
+                <button onclick="scrollCarousel('carousel-admin-${property.id}', -1)" aria-label="Previous image"><</button>
+                <button onclick="scrollCarousel('carousel-admin-${property.id}', 1)" aria-label="Next image">></button>
+              </div>
+            </div>
+            <div class="content">
+              <h3>${property.title}</h3>
+              <p>${property.location}</p>
+              <p class="price">KSh ${property.price.toLocaleString()}</p>
+              <p>${property.details}</p>
+              <p>${property.services}</p>
+              <div class="cta-buttons">
+                <button onclick="editProperty(${property.id})" aria-label="Edit property">Edit</button>
+                <button onclick="deleteProperty(${property.id})" aria-label="Delete property">Delete</button>
+              </div>
+            </div>
+          </div>
+        `;
+        adminGrid.innerHTML += card;
+      });
+    }
+
     function renderProperties() {
       const propertyGrid = document.getElementById('property-grid');
-      const wishlistGrid = document.getElementById('wishlist-grid');
-      const adminPropertyGrid = document.getElementById('admin-property-grid');
+      const propertyGridAll = document.getElementById('property-grid-all');
       propertyGrid.innerHTML = '';
-      wishlistGrid.innerHTML = '';
-      adminPropertyGrid.innerHTML = '';
+      propertyGridAll.innerHTML = '';
 
-      const isWishlistPage = document.getElementById('wishlist-page').style.display === 'block';
-      const propertiesToRender = isWishlistPage ? properties.filter(p => wishlist.includes(p.id)) : filteredProperties;
+      const isPropertiesPage = document.getElementById('properties-page').style.display === 'block';
+      const propertiesToRender = isPropertiesPage ? filteredProperties : filteredProperties.slice(0, 3);
 
       propertiesToRender.forEach(property => {
         const card = `
@@ -1302,75 +1370,36 @@
                 <button onclick="scrollCarousel('carousel-${property.id}', 1)" aria-label="Next image">></button>
               </div>
             </div>
-            <button class="wishlist-btn ${wishlist.includes(property.id) ? 'active' : ''}" onclick="event.stopPropagation(); toggleWishlist(${property.id})" aria-label="${wishlist.includes(property.id) ? 'Remove from' : 'Add to'} wishlist">♥</button>
             <div class="content">
               <h3>${property.title}</h3>
               <p>${property.location}</p>
-              <p class="price">KSh ${property.price.toLocaleString()}/night</p>
-              <p>${property.bedrooms} bed • ${property.bathrooms} bath</p>
-              <p>${property.description}</p>
+              <p class="price">KSh ${property.price.toLocaleString()}</p>
+              <p>${property.details}</p>
+              <p>${property.services}</p>
+              <div class="cta-buttons">
+                <a href="#" onclick="event.stopPropagation(); openModal(${property.id})" aria-label="View details">View Details</a>
+                <a href="mailto:qvaluers@gmail.com?subject=Valuation Request: ${encodeURIComponent(property.title)}" onclick="event.stopPropagation();" aria-label="Book valuation">Book Valuation</a>
+              </div>
             </div>
           </div>
         `;
-        if (isWishlistPage) {
-          wishlistGrid.innerHTML += card;
+        if (isPropertiesPage) {
+          propertyGridAll.innerHTML += card;
         } else {
           propertyGrid.innerHTML += card;
         }
       });
-
-      properties.forEach(property => {
-        const adminCard = `
-          <div class="property-card fade-in">
-            <div class="image-carousel" id="admin-carousel-${property.id}">
-              ${property.images.filter(img => img).map(img => `<img src="${img}" alt="${property.title}">`).join('')}
-              <div class="carousel-nav">
-                <button onclick="scrollCarousel('admin-carousel-${property.id}', -1)" aria-label="Previous image"><</button>
-                <button onclick="scrollCarousel('admin-carousel-${property.id}', 1)" aria-label="Next image">></button>
-              </div>
-            </div>
-            <div class="content">
-              <h3>${property.title}</h3>
-              <p>${property.location}</p>
-              <p class="price">KSh ${property.price.toLocaleString()}/night</p>
-              <div class="actions">
-                <button class="edit-btn" onclick="editProperty(${property.id})" aria-label="Edit property">Edit</button>
-                <button class="delete-btn" onclick="deleteProperty(${property.id})" aria-label="Delete property">Delete</button>
-              </div>
-            </div>
-          </div>
-        `;
-        adminPropertyGrid.innerHTML += adminCard;
-      });
-
-      updateWishlistCounter();
     }
 
-    // Update dashboard stats
-    function updateStats() {
-      const total = properties.length;
-      const avgPrice = properties.length ? Math.round(properties.reduce((sum, p) => sum + p.price, 0) / properties.length) : 0;
-      const locations = new Set(properties.map(p => p.location)).size;
-
-      document.getElementById('stat-total').textContent = total;
-      document.getElementById('stat-avg-price').textContent = `KSh ${avgPrice.toLocaleString()}`;
-      document.getElementById('stat-locations').textContent = locations;
-    }
-
-    // Search properties
     function searchProperties() {
       const location = document.getElementById('search-location').value.toLowerCase();
-      const bedrooms = document.getElementById('search-bedrooms').value;
-      const bathrooms = document.getElementById('search-bathrooms').value;
+      const type = document.getElementById('search-type').value;
       const price = document.getElementById('search-price').value;
 
       filteredProperties = properties.filter(p => {
         let match = true;
         if (location && !p.location.toLowerCase().includes(location)) match = false;
-        if (bedrooms && parseInt(bedrooms) === 3 && p.bedrooms < 3) match = false;
-        else if (bedrooms && parseInt(bedrooms) !== 3 && p.bedrooms !== parseInt(bedrooms)) match = false;
-        if (bathrooms && parseInt(bathrooms) === 3 && p.bathrooms < 3) match = false;
-        else if (bathrooms && parseInt(bathrooms) !== 3 && p.bathrooms !== parseInt(bathrooms)) match = false;
+        if (type && p.type !== type) match = false;
         if (price && p.price > parseInt(price)) match = false;
         return match;
       });
@@ -1378,190 +1407,32 @@
       renderProperties();
     }
 
-    // Show specific page
     function showPage(page) {
       document.getElementById('home-page').style.display = page === 'home' ? 'block' : 'none';
-      document.getElementById('wishlist-page').style.display = page === 'wishlist' ? 'block' : 'none';
+      document.getElementById('services-page').style.display = page === 'services' ? 'block' : 'none';
+      document.getElementById('properties-page').style.display = page === 'properties' ? 'block' : 'none';
       document.getElementById('about-page').style.display = page === 'about' ? 'block' : 'none';
       document.getElementById('contact-page').style.display = page === 'contact' ? 'block' : 'none';
-      document.getElementById('dashboard-page').style.display = page === 'dashboard' ? 'block' : 'none';
-
-      if (page === 'dashboard') {
-        document.getElementById('admin-login').style.display = isAuthenticated ? 'none' : 'block';
-        document.getElementById('admin-dashboard').style.display = isAuthenticated ? 'block' : 'none';
-        if (isAuthenticated) updateStats();
-      }
+      document.getElementById('admin-page').style.display = page === 'admin' ? 'block' : 'none';
       renderProperties();
+      if (page === 'admin') renderAdminProperties();
     }
 
-    // Admin login
-    function login() {
-      const password = document.getElementById('admin-password').value;
-      if (password === 'Ggreen3.') {
-        isAuthenticated = true;
-        showPage('dashboard');
-        renderProperties();
-      } else {
-        alert('Incorrect password');
-      }
-    }
-
-    // Save or update property
-    async function saveProperty() {
-      if (!isAuthenticated) {
-        alert('Please log in as admin');
-        return;
-      }
-
-      const property = {
-        id: editingId || (properties.length > 0 ? Math.max(...properties.map(p => p.id)) + 1 : 1),
-        title: document.getElementById('form-title').value,
-        location: document.getElementById('form-location').value,
-        price: parseInt(document.getElementById('form-price').value),
-        bedrooms: parseInt(document.getElementById('form-bedrooms').value),
-        bathrooms: parseInt(document.getElementById('form-bathrooms').value),
-        description: document.getElementById('form-description').value,
-        images: []
-      };
-
-      if (!property.title || !property.location || !property.price || !property.bedrooms || !property.bathrooms || !property.description) {
-        alert('Please fill all required fields');
-        return;
-      }
-
-      // Collect images (base64 or existing URLs)
-      for (let i = 1; i <= 5; i++) {
-        const fileInput = document.getElementById(`form-image-${i}`);
-        const existingImage = imagePreviews[i] && !fileInput.files[0] ? imagePreviews[i] : null;
-        if (fileInput.files[0] && imagePreviews[i]) {
-          property.images.push(imagePreviews[i]); // New base64
-        } else if (existingImage) {
-          property.images.push(existingImage); // Existing base64 or URL
-        }
-      }
-
-      if (property.images.length < 3) {
-        alert('Please upload at least 3 images');
-        return;
-      }
-
-      try {
-        await set(ref(db, `properties/${property.id}`), property);
-        editingId = null;
-        clearForm();
-      } catch (error) {
-        console.error('Error saving property:', error);
-        alert('Failed to save property. Please try again.');
-      }
-    }
-
-    // Edit property
-    function editProperty(id) {
-      const property = properties.find(p => p.id === id);
-      editingId = id;
-      document.getElementById('form-title').value = property.title;
-      document.getElementById('form-location').value = property.location;
-      document.getElementById('form-price').value = property.price;
-      document.getElementById('form-bedrooms').value = property.bedrooms;
-      document.getElementById('form-bathrooms').value = property.bathrooms;
-      document.getElementById('form-description').value = property.description;
-
-      for (let i = 1; i <= 5; i++) {
-        const preview = document.getElementById(`preview-image-${i}`);
-        const fileInput = document.getElementById(`form-image-${i}`);
-        if (property.images[i-1]) {
-          preview.src = property.images[i-1];
-          preview.style.display = 'block';
-          imagePreviews[i] = property.images[i-1];
-        } else {
-          preview.style.display = 'none';
-          delete imagePreviews[i];
-          fileInput.value = '';
-        }
-      }
-
-      document.getElementById('cancel-btn').style.display = 'block';
-      document.querySelector('#property-form button:not(.cancel-btn)').textContent = 'Update Property';
-    }
-
-    // Cancel edit
-    function cancelEdit() {
-      editingId = null;
-      clearForm();
-      document.getElementById('cancel-btn').style.display = 'none';
-      document.querySelector('#property-form button:not(.cancel-btn)').textContent = 'Add Property';
-    }
-
-    // Delete property
-    async function deleteProperty(id) {
-      if (!isAuthenticated) {
-        alert('Please log in as admin');
-        return;
-      }
-
-      if (confirm('Are you sure you want to delete this property?')) {
-        try {
-          await remove(ref(db, `properties/${id}`));
-          // Remove from wishlist
-          if (wishlist.includes(id)) {
-            wishlist = wishlist.filter(wid => wid !== id);
-            await set(wishlistRef, wishlist);
-          }
-        } catch (error) {
-          console.error('Error deleting property:', error);
-          alert('Failed to delete property. Please try again.');
-        }
-      }
-    }
-
-    // Clear form
-    function clearForm() {
-      document.getElementById('form-title').value = '';
-      document.getElementById('form-location').value = '';
-      document.getElementById('form-price').value = '';
-      document.getElementById('form-bedrooms').value = '';
-      document.getElementById('form-bathrooms').value = '';
-      document.getElementById('form-description').value = '';
-      for (let i = 1; i <= 5; i++) {
-        document.getElementById(`form-image-${i}`).value = '';
-        document.getElementById(`preview-image-${i}`).style.display = 'none';
-        delete imagePreviews[i];
-      }
-    }
-
-    // Secret admin access
-    function accessAdmin() {
-      showPage('dashboard');
-    }
-
-    // Keyboard shortcut for admin access
     document.addEventListener('keydown', (e) => {
       if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'a') {
-        accessAdmin();
+        e.preventDefault();
+        promptAdminLogin();
       }
-    });
-
-    // Check URL for admin access
-    if (window.location.hash === '#admin') {
-      accessAdmin();
-    }
-
-    // Update booking email on date change
-    document.getElementById('check-in').addEventListener('change', updateBookingEmail);
-    document.getElementById('check-out').addEventListener('change', updateBookingEmail);
-
-    // Keyboard navigation for property cards
-    document.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         const activeElement = document.activeElement;
         if (activeElement.classList.contains('property-card')) {
           const id = activeElement.getAttribute('onclick').match(/\d+/)[0];
-          openModal(id);
+          openModal(parseInt(id));
         }
       }
     });
 
-    // Initial render
+    renderProperties();
     showPage('home');
   </script>
 </body>
