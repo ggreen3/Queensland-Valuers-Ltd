@@ -713,6 +713,8 @@
         <a href="#" onclick="showPage('services')" aria-label="Services page">Services</a>
         <a href="#" onclick="showPage('properties')" aria-label="Properties page">Properties</a>
         <a href="#" onclick="showPage('contact')" aria-label="Contact page">Contact</a>
+        <a href="#" onclick="showPage('team')" aria-label="Our Team page">Our Team</a>
+        <a href="#" onclick="showPage('partners')" aria-label="Partners page">Partners</a>
       </div>
     </div>
   </nav>
@@ -729,6 +731,8 @@
         <option value="residential">Residential</option>
         <option value="commercial">Commercial</option>
         <option value="land">Land</option>
+        <option value="agricultural">Agricultural</option>
+        <option value="special">Special Purposes</option>
       </select>
       <input type="number" id="search-price" placeholder="Max Price (KSh)" aria-label="Maximum price">
       <button onclick="searchProperties()" aria-label="Search properties">Search</button>
@@ -801,7 +805,9 @@
       <div class="about-content">
         <div>
           <h3>Who We Are</h3>
-          <p>Founded in 2022 and based in Kilimani, Nairobi, Queensland Valuers Limited is your trusted real estate consultancy. Our team of licensed valuers, surveyors, and property managers delivers solutions with local insight and global standards.</p>
+          <p>Queensland Valuers Limited (QVL) is a Kenyan-based Property Valuation, Property management, Agency and Consultancy firm established in year 2022. We provide professional, timely and reliable real estate solutions to all our clients.</p>
+          <p>Our licensed team combines technical expertise with in-depth knowledge of the Kenyan real estate market to deliver services that meet regulatory standards and support informed financial decisions.</p>
+          <p>At QVL, we are committed to professionalism, integrity, and excellence in every assignment we undertake.</p>
         </div>
         <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="QVL Office" class="about-image">
         <div>
@@ -822,6 +828,50 @@
     </div>
   </div>
 
+  <div id="team-page" class="container" style="display: none;">
+    <div class="section">
+      <h2>Our Team</h2>
+      <div class="team-grid">
+        <div class="team-card fade-in">
+          <div class="content">
+            <h3>Milkah Muthoni Kariuki</h3>
+            <p>Cell: +254 726 849 665</p>
+          </div>
+        </div>
+        <div class="team-card fade-in">
+          <div class="content">
+            <h3>Elizabeth Wakabari Wanjohi</h3>
+            <p>Cell: +254 726 790 685</p>
+          </div>
+        </div>
+        <div class="team-card fade-in">
+          <div class="content">
+            <h3>Alex Kiumu</h3>
+            <p>Cell: +254 722 895 063</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="partners-page" class="container" style="display: none;">
+    <div class="section">
+      <h2>Our Partners</h2>
+      <div class="partners-grid">
+        <div class="partner-card fade-in">
+          <div class="content">
+            <h3>VRB, EARB, ISK</h3>
+          </div>
+        </div>
+        <div class="partner-card fade-in">
+          <div class="content">
+            <h3>FIG, APSEA, CASLE</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div id="contact-page" class="container" style="display: none;">
     <div class="section contact-section">
       <h2>Contact Us</h2>
@@ -831,9 +881,9 @@
           <p>Have questions or need expert property advice? Our team is here to assist you.</p>
           <p><strong>Elizabeth Wakabari Wanjohi:</strong> +254 726 790 685</p>
           <p><strong>Milkah Muthoni Kariuki:</strong> +254 726 849 665</p>
-          <p><strong>Email:</strong> qvaluers@gmail.com / qvaluers@yahoo.com</p>
+          <p><strong>Alex Kiumu:</strong> +254 722 895 063</p>
           <p><strong>Address:</strong> Timau Plaza, 2nd Floor, Argwings Kodhek Road, Kilimani, Nairobi</p>
-          <p><strong>P.O. Box:</strong> 38790, Nairobi GPO</p>
+          <p><strong>P.O. Box:</strong> 38790, 00100 Nairobi</p>
         </div>
         <div>
           <input type="text" id="contact-name" placeholder="Your Name" aria-label="Your name">
@@ -859,6 +909,8 @@
             <option value="residential">Residential</option>
             <option value="commercial">Commercial</option>
             <option value="land">Land</option>
+            <option value="agricultural">Agricultural</option>
+            <option value="special">Special Purposes</option>
           </select>
           <textarea id="admin-details" placeholder="Details" aria-label="Property details"></textarea>
           <textarea id="admin-services" placeholder="Services" aria-label="Property services"></textarea>
@@ -912,6 +964,8 @@
           <li><a href="#" onclick="showPage('services')">Real Estate Management</a></li>
           <li><a href="#" onclick="showPage('services')">Property Research</a></li>
           <li><a href="#" onclick="showPage('services')">Site Acquisition</a></li>
+          <li><a href="#" onclick="showPage('services')">Letting & Sales</a></li>
+          <li><a href="#" onclick="showPage('services')">Construction & Hospitality Consulting</a></li>
         </ul>
       </div>
       <div class="footer-column">
@@ -921,20 +975,22 @@
           <li><a href="#" onclick="showPage('properties')">Commercial</a></li>
           <li><a href="#" onclick="showPage('properties')">Industrial</a></li>
           <li><a href="#" onclick="showPage('properties')">Land</a></li>
+          <li><a href="#" onclick="showPage('properties')">Agricultural</a></li>
+          <li><a href="#" onclick="showPage('properties')">Special Purposes</a></li>
         </ul>
       </div>
       <div class="footer-column">
         <h4>Contact Us</h4>
         <p>Timau Plaza, 2nd Floor<br>Argwings Kodhek Road, Kilimani<br>Nairobi, Kenya</p>
-        <p>P.O. Box 38790, Nairobi GPO</p>
+        <p>P.O. Box 38790, 00100 Nairobi</p>
         <p><a href="tel:+254726790685">Elizabeth: +254 726 790 685</a></p>
         <p><a href="tel:+254726849665">Milkah: +254 726 849 665</a></p>
-        <p><a href="mailto:qvaluers@gmail.com">qvaluers@gmail.com</a></p>
+        <p><a href="tel:+254722895063">Alex: +254 722 895 063</a></p>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>Licensed by: <span>VRB</span><span>EARB</span><span>ISK</span></p>
-      <p>Affiliated with: <span>FIG</span><span>APSEA</span><span>CASLE</span></p>
+      <p>Licensed by: <span class="affiliations">VRB</span><span class="affiliations">EARB</span><span class="affiliations">ISK</span></p>
+      <p>Affiliated with: <span class="affiliations">FIG</span><span class="affiliations">APSEA</span><span class="affiliations">CASLE</span></p>
       <p>© 2025 Queensland Valuers Limited. All rights reserved.</p>
     </div>
   </footer>
@@ -1067,7 +1123,7 @@
         .join('');
 
       document.getElementById('book-phone-btn').href = `tel:+254726790685`;
-      document.getElementById('book-email-btn').href = `mailto:qvaluers@gmail.com?subject=Inquiry: ${encodeURIComponent(property.title)}&body=I'm interested in ${encodeURIComponent(property.title)} located in ${encodeURIComponent(property.location)}. Please provide more details.`;
+      document.getElementById('book-email-btn').href = `mailto:info@queenslandvaluers.co.ke?subject=Inquiry: ${encodeURIComponent(property.title)}&body=I'm interested in ${encodeURIComponent(property.title)} located in ${encodeURIComponent(property.location)}. Please provide more details.`;
 
       document.getElementById('property-modal').style.display = 'flex';
     }
@@ -1088,7 +1144,7 @@
 
       const subject = encodeURIComponent('Contact Form Submission');
       const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
-      window.location.href = `mailto:qvaluers@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:info@queenslandvaluers.co.ke?subject=${subject}&body=${body}`;
       alert('Opening your email client...');
     }
 
@@ -1378,7 +1434,7 @@
               <p>${property.services}</p>
               <div class="cta-buttons">
                 <a href="#" onclick="event.stopPropagation(); openModal(${property.id})" aria-label="View details">View Details</a>
-                <a href="mailto:qvaluers@gmail.com?subject=Valuation Request: ${encodeURIComponent(property.title)}" onclick="event.stopPropagation();" aria-label="Book valuation">Book Valuation</a>
+                <a href="mailto:info@queenslandvaluers.co.ke?subject=Valuation Request: ${encodeURIComponent(property.title)}" onclick="event.stopPropagation();" aria-label="Book valuation">Book Valuation</a>
               </div>
             </div>
           </div>
@@ -1412,6 +1468,8 @@
       document.getElementById('services-page').style.display = page === 'services' ? 'block' : 'none';
       document.getElementById('properties-page').style.display = page === 'properties' ? 'block' : 'none';
       document.getElementById('about-page').style.display = page === 'about' ? 'block' : 'none';
+      document.getElementById('team-page').style.display = page === 'team' ? 'block' : 'none';
+      document.getElementById('partners-page').style.display = page === 'partners' ? 'block' : 'none';
       document.getElementById('contact-page').style.display = page === 'contact' ? 'block' : 'none';
       document.getElementById('admin-page').style.display = page === 'admin' ? 'block' : 'none';
       renderProperties();
